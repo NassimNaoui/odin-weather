@@ -1,2 +1,2 @@
-import "./API/weather-api.js";
+import "./UI/ui.js";
 import "./styles.css";

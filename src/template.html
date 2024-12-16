@@ -6,8 +6,65 @@
     <title>Document</title>
   </head>
   <body>
-    <label for="location-search">Search a location:</label>
-    <input type="search" id="location-search" name="q" />
-    <button id="location-search-button">Search</button>
+    <div class="container">
+      <div class="search-container">
+        <h1>Weather in 10 days</h1>
+        <div class="search-bar-container">
+          <input
+            type="search"
+            id="location-search"
+            name="q"
+            value="Search a Location"
+            s
+          />
+          <button id="location-search-button">
+            <img
+              src="./UI/Icon/search_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+              alt="search-logo"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="cards-container">
+        <div class="day-card-container">
+          <h2>Today's Weather</h2>
+          <div class="day-card-weather">
+            <div class="location-container">
+              <div id="location-today-card">{Location}</div>
+              <img
+                src="./UI/Icon/location_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+                alt="location-icon"
+                class="location-icon"
+              />
+            </div>
+            <div
+              class="icon-weather-container"
+              id="icon-weather-today-card"
+            ></div>
+            <div class="temp-condition-container">
+              <div class="temp-container" id="temp-today-card">{Temp}</div>
+              <div class="condition-container" id="condition-today-card">
+                {Condition}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="week-card-container">
+          <h2>Forecast in 10 days</h2>
+          <div class="week-card-weather">
+            <div class="location-container">
+              <div id="location-week-card">{Location}</div>
+              <img
+                src="./UI/Icon/location_on_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+                alt="location-icon"
+                class="location-icon"
+              />
+            </div>
+            <canvas id="chart-container"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

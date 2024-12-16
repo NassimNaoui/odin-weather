@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --gradient-clear: linear-gradient(
+    to right top,
+    #1760bf,
+    #0e6cc5,
+    #0e78cb,
+    #1883d0,
+    #278ed4,
+    #3798d8,
+    #46a3dc,
+    #56addf,
+    #68b9e4,
+    #7bc4e8,
+    #8dd0ed,
+    #a0dbf2
+  );
+  --gradient-cloudy: linear-gradient(
+    to bottom,
+    #2b3640,
+    #3d4752,
+    #505964,
+    #646b77,
+    #787e8b,
+    #868a96,
+    #9396a2,
+    #a1a2ad,
+    #aaaab2,
+    #b2b2b8,
+    #bbbbbd,
+    #c3c3c3
+  );
+  --gradient-partly-cloudy: linear-gradient(
+    to bottom,
+    #3370a6,
+    #3e79ab,
+    #4882b0,
+    #548bb4,
+    #5f94b9,
+    #67a1bc,
+    #75adbe,
+    #86b8c0,
+    #a3c7c2,
+    #c1d5ca,
+    #dde3da,
+    #f2f2f0
+  );
+  --gradient-light-rain: linear-gradient(
+    to bottom,
+    #394a59,
+    #435462,
+    #4d5f6c,
+    #586975,
+    #63747f,
+    #6e7d88,
+    #7a8790,
+    #859099,
+    #939ba2,
+    #a1a7ac,
+    #afb2b5,
+    #bdbebf
+  );
+  --gradient-heavy-rain: linear-gradient(
+    to bottom,
+    #172226,
+    #212f34,
+    #2c3c42,
+    #374a50,
+    #43595f,
+    #4e656b,
+    #597278,
+    #647f85,
+    #718d93,
+    #7f9ca2,
+    #8daab0,
+    #9bb9bf
+  );
+  --gradient-thunderstorm: linear-gradient(
+    to top,
+    #051326,
+    #081a2f,
+    #0a2038,
+    #0d2742,
+    #0f2e4c,
+    #143858,
+    #194264,
+    #1d4c71,
+    #245b84,
+    #2c6b97,
+    #337bab,
+    #398cbf
+  );
+  --gradient-snow: linear-gradient(
+    to left bottom,
+    #68788c,
+    #718195,
+    #7a8a9f,
+    #8394a8,
+    #8c9db2,
+    #95a6bb,
+    #9daec3,
+    #a6b7cc,
+    #b0c1d5,
+    #bacadf,
+    #c4d4e8,
+    #cedef2
+  );
+  --gradient-fog: linear-gradient(
+    to left bottom,
+    #7b838c,
+    #8b909b,
+    #9c9eaa,
+    #aeabb9,
+    #c0b9c7,
+    #cac2cf,
+    #d5cbd7,
+    #dfd4df,
+    #e4dae3,
+    #e9dfe7,
+    #ede5ec,
+    #f2ebf0
+  );
+  --gradient-windy: linear-gradient(to bottom, #d8bfd8, #87cefa);
+  --gradient-overcast: linear-gradient(to bottom, #a9a9a9, #708090);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto;
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2 {
+  color: white;
+}
+
+input {
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  width: 90%;
+}
+
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px white solid;
+  background-color: #0513260c;
+  border-radius: 15px;
+  width: 450px;
+  height: 20px;
+  padding: 5px;
+}
+
+#location-search-button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+img {
+  height: 15px;
+  width: 15px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  margin: 5px 60px 0px 60px;
+}
+
+.day-card-container,
+.week-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  color: white;
+}
+
+.day-card-weather {
+  height: 400px;
+  width: 400px;
+  background-color: #05132613;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.location-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  gap: 10px;
+}
+
+#location-today-card,
+#location-week-card {
+  font-size: 1.2em;
+}
+
+.location-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.icon-weather-container,
+.temp-condition-container,
+.temp-container,
+.condition-container {
+  display: flex;
+  justify-content: center;
+}
+
+.temp-condition-container {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon-weather-container {
+  height: 50%;
+  align-items: end;
+}
+
+#icon-weather-today {
+  height: 150px;
+  width: 150px;
+}
+
+.temp-container {
+  font-size: 1.9em;
+  font-weight: 600;
+}
+
+.condition-container {
+  height: 10%;
+  align-items: baseline;
+}
+
+.week-card-weather {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 700px;
+  background-color: #05132613;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.icon-week-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#icon-weather-week {
+  height: 25px;
+  width: 25px;
+}
+
+#icon-day1,
+#icon-day2,
+#icon-day3,
+#icon-day4,
+#icon-day5,
+#icon-day6,
+#icon-day7,
+#icon-day8,
+#icon-day9,
+#icon-day10 {
+  display: flex;
+  width: 50px;
+}

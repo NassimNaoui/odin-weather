@@ -1,6 +1,6 @@
-import { addDays, format } from "date-fns";
+import { addDays, format, getDay } from "date-fns";
 
-async function getWeatherData(location) {
+export async function getWeatherData(location) {
   const apiKey = "2JDU5JUVGRGN43C3TYQ4ZTMYG";
   const today = new Date();
   const formattedDate = format(today, "yyyy-MM-dd");
@@ -12,15 +12,16 @@ async function getWeatherData(location) {
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${formattedDate}/${formattedTenDays}?key=${apiKey}`
     );
     const allWeatherData = await response.json();
-    console.log(allWeatherData);
-    createNewDataframe(allWeatherData);
+    const cleanedDataFrame = createNewDataframe(allWeatherData); // Appel à la fonction
+    return cleanedDataFrame;
   } catch (error) {
     console.log(error);
   }
 }
 
-function convertTemp(f) {
+export function convertTemp(f) {
   const c = ((f - 32) * 5) / 9;
+  return c;
 }
 
 function createNewDataframe(df) {
@@ -42,8 +43,24 @@ function createNewDataframe(df) {
   }
 
   newDf[countdays] = Object.entries(df).filter((key) => key[0] === "address");
-  console.log(newDf);
   return newDf;
 }
 
-getWeatherData("Paris");
+export function getNameDay(date) {
+  const dayNumber = getDay(date);
+  if (dayNumber === 1) {
+    return "Mon.";
+  } else if (dayNumber === 2) {
+    return "Tue.";
+  } else if (dayNumber === 3) {
+    return "Wed.";
+  } else if (dayNumber === 4) {
+    return "Thu.";
+  } else if (dayNumber === 5) {
+    return "Fri.";
+  } else if (dayNumber === 6) {
+    return "Sat.";
+  } else if (dayNumber === 0) {
+    return "Sun.";
+  }
+}
